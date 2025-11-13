@@ -50,7 +50,7 @@ export default function Dashboard() {
 				levelElement.style.color = 'green';
 			} else if (level > 20) {
 				// This covers >20 and <=80
-				levelElement.style.color = 'yellow';
+				levelElement.style.color = '#FEBE10';
 			} else {
 				// This covers <= 20
 				levelElement.style.color = 'red';
