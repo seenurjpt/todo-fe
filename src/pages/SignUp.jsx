@@ -41,15 +41,13 @@ export default function Signup() {
 	};
 
 	return (
-		<div className='flex justify-center items-center h-screen w-screen bg-image'>
+		<div class='flex justify-center items-center h-screen w-screen bg-image p-4 sm:p-6 md:p-8'>
 			<form
 				onSubmit={handleSubmit}
-				className='bg-white/40 p-10 rounded-xl shadow-lg w-full max-w-md flex flex-col'
+				class='bg-white/40 p-8 sm:p-10 rounded-xl shadow-lg w-full max-w-sm sm:max-w-md flex flex-col'
 			>
-				<h2 className='text-center text-2xl mb-6 text-gray-700'>
-					Create Account
-				</h2>
-				{error && <p className='text-red-500 text-center mb-4'>{error}</p>}
+				<h2 class='text-center text-2xl mb-6 text-gray-700'>Create Account</h2>
+				{error && <p class='text-red-500 text-center mb-4'>{error}</p>}
 
 				<input
 					name='fullName'
@@ -57,7 +55,7 @@ export default function Signup() {
 					value={form.fullName}
 					onChange={handleChange}
 					required
-					className='mb-4 p-3 border border-white rounded-md text-gray-800 focus:outline-none focus:border-blue-500 focus:bg-white/30'
+					class='mb-4 p-3 border border-white rounded-md text-gray-800 focus:outline-none focus:border-blue-500 focus:bg-white/30'
 				/>
 
 				<input
@@ -66,7 +64,7 @@ export default function Signup() {
 					value={form.email}
 					onChange={handleChange}
 					required
-					className='mb-4 p-3 border border-white rounded-md text-gray-700 focus:outline-none focus:border-blue-500 focus:bg-white/30'
+					class='mb-4 p-3 border border-white rounded-md text-gray-700 focus:outline-none focus:border-blue-500 focus:bg-white/30'
 				/>
 
 				<input
@@ -76,13 +74,13 @@ export default function Signup() {
 					value={form.password}
 					onChange={handleChange}
 					required
-					className='mb-4 p-3 border border-white rounded-md text-gray-700 focus:outline-none focus:border-blue-500 focus:bg-white/30'
+					class='mb-4 p-3 border border-white rounded-md text-gray-700 focus:outline-none focus:border-blue-500 focus:bg-white/30'
 				/>
 
 				<button
 					type='submit'
 					disabled={loading}
-					className={`w-full p-3 text-white rounded-md text-lg font-semibold  transition-all ${
+					class={`w-full p-3 text-white rounded-md text-lg font-semibold transition-all ${
 						loading
 							? 'bg-blue-500 cursor-not-allowed'
 							: 'bg-blue-600 hover:bg-blue-700'
@@ -91,11 +89,11 @@ export default function Signup() {
 					{loading ? 'Signing up...' : 'Sign Up'}
 				</button>
 
-				<p className='mt-4 text-center'>
-					Already have an account?{' '}
+				<p class='mt-4 text-center'>
+					Already have an account?
 					<Link
 						to='/login'
-						className='text-blue-600 underline'
+						class='text-blue-600 underline'
 					>
 						Login
 					</Link>

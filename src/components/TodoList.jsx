@@ -165,7 +165,7 @@ export default function TodoList() {
 				{/* Create New Todo / Bulk Actions */}
 				{!selectedTodos.length ? (
 					<button
-						className='flex items-center bg-blue-600 text-white py-2 px-6 rounded-lg text-lg font-semibold shadow-md hover:bg-blue-700 transition-all'
+						className='flex items-center bg-blue-600 text-white py-2 px-1 md:py-2 md:px-6 rounded-lg text-xs md:text-lg font-semibold shadow-md hover:bg-blue-700 transition-all'
 						onClick={openModalForCreate}
 					>
 						<FaPlus className='mr-2' /> Create New Todo

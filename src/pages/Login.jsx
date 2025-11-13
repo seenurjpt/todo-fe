@@ -39,15 +39,13 @@ export default function Login() {
 	};
 
 	return (
-		<div className='flex justify-center items-center h-screen w-screen bg-image2'>
+		<div class='flex justify-center items-center h-screen w-screen bg-image2 p-4 sm:p-6 md:p-8'>
 			<form
 				onSubmit={handleSubmit}
-				className='bg-white/40 p-10 rounded-xl shadow-lg w-full max-w-md flex flex-col'
+				class='bg-white/40 p-8 sm:p-10 rounded-xl shadow-lg w-full max-w-sm sm:max-w-md flex flex-col'
 			>
-				<h2 className='text-center text-2xl mb-6 text-gray-700'>
-					Welcome Back
-				</h2>
-				{error && <p className='text-red-500 text-center mb-4'>{error}</p>}
+				<h2 class='text-center text-2xl mb-6 text-gray-700'>Welcome Back</h2>
+				{error && <p class='text-red-500 text-center mb-4'>{error}</p>}
 
 				<input
 					name='email'
@@ -55,7 +53,7 @@ export default function Login() {
 					value={form.email}
 					onChange={handleChange}
 					required
-					className='mb-4 p-3 border border-white rounded-md text-gray-700 focus:outline-none focus:border-blue-500 focus:bg-white/30'
+					class='mb-4 p-3 border border-white rounded-md text-gray-700 focus:outline-none focus:border-blue-500 focus:bg-white/30'
 				/>
 
 				<input
@@ -65,23 +63,24 @@ export default function Login() {
 					value={form.password}
 					onChange={handleChange}
 					required
-					className='mb-4 p-3 border border-white rounded-md text-gray-700 focus:outline-none focus:border-blue-500 focus:bg-white/30'
+					class='mb-4 p-3 border border-white rounded-md text-gray-700 focus:outline-none focus:border-blue-500 focus:bg-white/30'
 				/>
 
 				<button
 					type='submit'
 					disabled={loading}
-					className={`w-full p-3 text-white rounded-md text-lg font-semibold  transition-all ${loading ? 'bg-blue-500' : 'bg-blue-600 hover:bg-blue-700'
-						}`}
+					class={`w-full p-3 text-white rounded-md text-lg font-semibold transition-all ${
+						loading ? 'bg-blue-500' : 'bg-blue-600 hover:bg-blue-700'
+					}`}
 				>
 					{loading ? 'Logging in...' : 'Login'}
 				</button>
 
-				<p className='mt-4 text-center'>
-					Don’t have an account?{' '}
+				<p class='mt-4 text-center'>
+					Don’t have an account?
 					<Link
 						to='/signup'
-						className='text-blue-600 underline'
+						class='text-blue-600 underline'
 					>
 						Sign Up
 					</Link>
