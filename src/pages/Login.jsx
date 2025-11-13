@@ -5,12 +5,14 @@ import { toast } from 'sonner';
 export default function Login() {
 	const [form, setForm] = useState({ email: '', password: '' });
 	const [error, setError] = useState('');
+	const [loading, setLoading] = useState(false);
 	const navigate = useNavigate();
 
 	const handleChange = (e) =>
 		setForm({ ...form, [e.target.name]: e.target.value });
 
 	const handleSubmit = async (e) => {
+		setLoading(true);
 		e.preventDefault();
 		setError('');
 		try {
@@ -31,6 +33,8 @@ export default function Login() {
 			}, 800);
 		} catch (err) {
 			toast.error(err.message);
+		} finally {
+			setLoading(false);
 		}
 	};
 
@@ -66,9 +70,11 @@ export default function Login() {
 
 				<button
 					type='submit'
-					className='w-full p-3 bg-blue-600 text-white rounded-md text-lg font-semibold hover:bg-blue-700 transition-all'
+					disabled={loading}
+					className={`w-full p-3 text-white rounded-md text-lg font-semibold  transition-all ${loading ? 'bg-blue-500' : 'bg-blue-600 hover:bg-blue-700'
+						}`}
 				>
-					Login
+					{loading ? 'Logging in...' : 'Login'}
 				</button>
 
 				<p className='mt-4 text-center'>

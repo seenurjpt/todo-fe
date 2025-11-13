@@ -5,6 +5,7 @@ import { toast } from 'sonner';
 export default function Signup() {
 	const [form, setForm] = useState({ fullName: '', email: '', password: '' });
 	const [error, setError] = useState('');
+	const [loading, setLoading] = useState(false);
 	const navigate = useNavigate();
 
 	const handleChange = (e) =>
@@ -13,6 +14,7 @@ export default function Signup() {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		setError('');
+		setLoading(true);
 		try {
 			const res = await fetch(
 				`${import.meta.env.VITE_BASE_URL}/auth/register`,
@@ -33,6 +35,8 @@ export default function Signup() {
 			}, 1000);
 		} catch (err) {
 			toast.error(err.message);
+		} finally {
+			setLoading(false);
 		}
 	};
 
@@ -77,9 +81,11 @@ export default function Signup() {
 
 				<button
 					type='submit'
-					className='w-full p-3 bg-blue-600 text-white rounded-md text-lg font-semibold hover:bg-blue-700 transition-all'
+					disabled={loading}
+					className={`w-full p-3 text-white rounded-md text-lg font-semibold  transition-all ${loading ? 'bg-blue-500 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+						}`}
 				>
-					Sign Up
+					{loading ? 'Signing up...' : 'Sign Up'}
 				</button>
 
 				<p className='mt-4 text-center'>
