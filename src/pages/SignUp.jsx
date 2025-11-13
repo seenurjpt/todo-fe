@@ -32,10 +32,10 @@ export default function Signup() {
 			toast.success(data.message);
 			setTimeout(() => {
 				navigate('/login');
+				setLoading(false);
 			}, 1000);
 		} catch (err) {
 			toast.error(err.message);
-		} finally {
 			setLoading(false);
 		}
 	};
@@ -82,8 +82,11 @@ export default function Signup() {
 				<button
 					type='submit'
 					disabled={loading}
-					className={`w-full p-3 text-white rounded-md text-lg font-semibold  transition-all ${loading ? 'bg-blue-500 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
-						}`}
+					className={`w-full p-3 text-white rounded-md text-lg font-semibold  transition-all ${
+						loading
+							? 'bg-blue-500 cursor-not-allowed'
+							: 'bg-blue-600 hover:bg-blue-700'
+					}`}
 				>
 					{loading ? 'Signing up...' : 'Sign Up'}
 				</button>

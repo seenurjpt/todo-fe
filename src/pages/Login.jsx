@@ -30,10 +30,10 @@ export default function Login() {
 			toast.success(data.message);
 			setTimeout(() => {
 				navigate('/dashboard');
+				setLoading(false);
 			}, 800);
 		} catch (err) {
 			toast.error(err.message);
-		} finally {
 			setLoading(false);
 		}
 	};
