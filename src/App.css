@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+.bg-image {
+  background-image: url('./bg.jpg');
+  background-repeat: no-repeat;
+}
+
+.bg-image2 {
+  background-image: url('./bg2.jpg');
+  background-repeat: no-repeat;
+}
+
+/* Level Colors */
+.level-high {
+  color: green;
+}
+
+.level-medium {
+  color: orange;
+}
+
+/* Orange is often more readable than yellow */
+.level-low {
+  color: red;
+}
+
+/* Charging Colors */
+.charging-yes {
+  color: green;
+}
+
+.charging-no {
+  color: orange;
+}
+
+button {
+  cursor: pointer !important;
+}
