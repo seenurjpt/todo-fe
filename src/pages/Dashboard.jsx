@@ -64,7 +64,7 @@ export default function Dashboard() {
 			if (isCharging) {
 				chargingElement.style.color = 'green';
 			} else {
-				chargingElement.style.color = 'yellow';
+				chargingElement.style.color = '#FEBE10';
 			}
 		}
 
@@ -140,21 +140,23 @@ export default function Dashboard() {
 				</h3>
 				<TodoList />
 
-				<div className='flex justify-center gap-5'>
-					<p>
-						<strong className='text-cyan-600'>OS: </strong>{' '}
-						<span className='text-teal-900'>{getOperatingSystem()}</span>
-					</p>
-					<span>|</span>
-					<p className='text-cyan-600'>
-						<strong>Battery: </strong>
-						<span id='battery-level'>...</span>
-					</p>
-					<span>|</span>
-					<p className='text-cyan-600'>
-						<strong>Charging: </strong>
-						<span id='battery-charging'>...</span>
-					</p>
+				<div class='flex justify-center gap-5'>
+					<div class='flex justify-center gap-5 w-50VW rounded-2xl bg-white p-4 shadow-lg'>
+						<p>
+							<strong class='text-cyan-600'>OS: </strong>
+							<span class='text-teal-900'>{getOperatingSystem()}</span>
+						</p>
+						<span class='text-gray-400'>|</span>
+						<p class='text-cyan-600'>
+							<strong>Battery: </strong>
+							<span id='battery-level'>...</span>
+						</p>
+						<span class='text-gray-400'>|</span>
+						<p class='text-cyan-600'>
+							<strong>Charging: </strong>
+							<span id='battery-charging'>...</span>
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
