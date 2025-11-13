@@ -17,6 +17,11 @@ import {
 	FaFilter, // Added filter icon
 } from 'react-icons/fa';
 import { toast } from 'sonner';
+import Loader from './loaders/Loader';
+import Loader2 from './loaders/Loader2';
+import Loader3 from './loaders/Loader3';
+import Loader4 from './loaders/Loader4';
+import Loader5 from './loaders/Loader5';
 
 export default function TodoList() {
 	const [todos, setTodos] = useState([]);
@@ -152,8 +157,22 @@ export default function TodoList() {
 	const totalPages = paginationData.totalPages;
 
 	const paginate = (pageNumber) => setCurrentPage(pageNumber);
+	const loaders = [
+		<Loader />,
+		<Loader2 />,
+		<Loader3 />,
+		<Loader4 />,
+		<Loader5 />,
+	];
 
-	if (loading) return <div className='loading-message'>Loading...</div>;
+	// Randomly pick one loader
+	const randomLoader = loaders[Math.floor(Math.random() * loaders.length)];
+	if (loading)
+		return (
+			<div className='flex justify-center items-center w-full h-[60vh]'>
+				{randomLoader}
+			</div>
+		);
 	if (error) return <div className='error-message'>Error: {error}</div>;
 
 	return (
