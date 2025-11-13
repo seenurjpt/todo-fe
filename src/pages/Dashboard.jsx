@@ -63,7 +63,7 @@ export default function Dashboard() {
           });
           battery.addEventListener('chargingchange', () => {
             chargingElement.textContent = battery.charging ? 'Yes' : 'No';
-						chargingElement.style.color = isCharging ? 'green' : '#FEBE10';
+						chargingElement.style.color = battery.charging ? 'green' : '#FEBE10';
           });
         })
         .catch((error) => {
