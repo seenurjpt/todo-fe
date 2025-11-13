@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 .bg-image {
-  background-image: url('./bg.jpg');
+  background-image: url('/bg.jpg');
   background-repeat: no-repeat;
 }
 
 .bg-image2 {
-  background-image: url('./bg2.jpg');
+  background-image: url('/bg2.jpg');
   background-repeat: no-repeat;
 }
 
