@@ -80,13 +80,6 @@ export default function Dashboard() {
 		}
 	};
 
-	const isSafariOrIOS = () => {
-		const ua = navigator.userAgent.toLowerCase();
-		return (
-			(/safari/.test(ua) && !/chrome/.test(ua)) || /iphone|ipad|ipod/.test(ua)
-		);
-	};
-
 	return (
 		<div className='flex flex-col h-screen w-screen bg-[#f7f9fc]'>
 			<div className='flex justify-between items-center p-4 bg-blue-600 text-white'>
@@ -122,21 +115,16 @@ export default function Dashboard() {
 							<strong className='text-cyan-600'>OS: </strong>
 							<span className='text-teal-900'>{getOperatingSystem()}</span>
 						</p>
-
-						{!isSafariOrIOS() && (
-							<>
-								<span className='text-gray-400'>|</span>
-								<p className='text-cyan-600'>
-									<strong>Battery: </strong>
-									<span id='battery-level'>...</span>
-								</p>
-								<span className='text-gray-400'>|</span>
-								<p className='text-cyan-600'>
-									<strong>Charging: </strong>
-									<span id='battery-charging'>...</span>
-								</p>
-							</>
-						)}
+						<span className='text-gray-400'>|</span>
+						<p className='text-cyan-600'>
+							<strong>Battery: </strong>
+							<span id='battery-level'>...</span>
+						</p>
+						<span className='text-gray-400'>|</span>
+						<p className='text-cyan-600'>
+							<strong>Charging: </strong>
+							<span id='battery-charging'>...</span>
+						</p>
 					</div>
 				</div>
 			</div>
